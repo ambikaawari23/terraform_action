@@ -9,7 +9,7 @@ jobs:
     name: 'Terraform init'
  
     runs-on: ubuntu-latest
-    if: needs.terraform-plan.outputs.tfplanExitCode == 2
+    
 
     defaults:
       run:
