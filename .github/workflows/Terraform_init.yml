@@ -1,12 +1,12 @@
-name: 'Terraform nit'
+name: 'Terraform niti'
 
 on:
   workflow_call:
     
 
 jobs:
-  terraform-apply:
-    name: 'Terraform Apply'
+  terraform-init:
+    name: 'Terraform init'
  
     runs-on: ubuntu-latest
     if: needs.terraform-plan.outputs.tfplanExitCode == 2
