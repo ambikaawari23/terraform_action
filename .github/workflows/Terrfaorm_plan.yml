@@ -1,12 +1,12 @@
-name: 'Terraform Apply'
+name: 'Terraform Plan'
 
 on:
   workflow_call:
   
 
 jobs:
-  terraform-apply:
-    name: 'Terraform Apply'
+  terraform-plan:
+    name: 'Terraform Plan'
     
     runs-on: ubuntu-latest
     if: needs.terraform-plan.outputs.tfplanExitCode == 2
