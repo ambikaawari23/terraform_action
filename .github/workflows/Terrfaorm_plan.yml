@@ -9,7 +9,7 @@ jobs:
     name: 'Terraform Plan'
     
     runs-on: ubuntu-latest
-    if: needs.terraform-plan.outputs.tfplanExitCode == 2
+    
 
     steps:
       - name: Checkout
