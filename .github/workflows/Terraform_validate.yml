@@ -1,0 +1,27 @@
+name: 'Terraform Validate'
+
+on:
+  workflow_call:
+    
+
+jobs:
+  terraform-apply:
+    name: 'Terraform validate'
+ 
+    runs-on: ubuntu-latest
+    if: needs.terraform-plan.outputs.tfplanExitCode == 2
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      
+      - name: 'Terraform Validate'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+         tf_actions_version: 0.14.8
+         tf_actions_subcommand: 'validate'
+        
+
