@@ -1,0 +1,43 @@
+on:
+  workflow_call:
+    inputs:
+      working_dir:
+        type: string
+        default: .
+      action:
+        type: string
+        default: 'init'
+
+#For Az login
+env:
+  ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+  ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+  ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+
+jobs:
+  tf_workflow:
+    runs-on: ubuntu-latest
+    steps:
+
+#For Cloning the Repo
+    - name: checkout
+      uses: actions/checkout@v3
+
+#Install Terraform
+    - uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.1.7
+
+#Verify the Installation
+    - name: get-tf-version
+      run: |
+        terraform --version
+
+    - run: terraform init
+      working-directory: ${{ inputs.working_dir }}
+
+#Terraform Sub commnads
+    - run: terraform ${{ inputs.action }}
+      working-directory: ${{ inputs.working_dir }}
