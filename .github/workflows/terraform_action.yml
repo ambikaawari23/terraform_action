@@ -1,20 +1,15 @@
 on:
   workflow_call:
     inputs:
-#       working_dir:
-#         type: string
-#         default: .
+      working_dir:
+        type: string
+        default: .
+        required: true
       action:
         type: string
         default: 'init'
   
-      name:
-        type: string
-        description: 'Working directory'
-        # Default value if no value is explicitly provided
-        default: '.'
-        # Input has to be provided for the workflow to run
-        required: true
+
 
 #For Az login
 env:
