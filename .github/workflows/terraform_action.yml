@@ -47,10 +47,10 @@ jobs:
         terraform --version
 
     - run: terraform init
-      working-directory: ${{ inputs.working_dir }}
+#       working-directory: ${{ inputs.working_dir }}
 
 #Terraform Sub commnads
     - run: terraform ${{ inputs.action }}
-      working-directory: ${{ inputs.working_dir }}
+#       working-directory: ${{ inputs.working_dir }}
 
        
