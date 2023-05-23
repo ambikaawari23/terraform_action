@@ -3,7 +3,7 @@ on:
     inputs:
       working_dir:
         type: string
-        default: ambikaawari23/stg/terraform-stg/main.tf@main
+        default: ambikaawari23/stg/terraform-stg
         
       action:
         type: string
@@ -26,10 +26,10 @@ jobs:
 
 #For Cloning the Repo
     - name: checkout
-      uses: actions/checkout@v3
-#       with:
-#         repository: ambikaawari23/stg
-#         path: ./terraform-stg
+      uses: ambikaawari23/stg/terraform-stg@v1
+      with:
+        repository: ambikaawari23/stg
+        path: ./terraform-stg
 
 #Install Terraform
     - uses: hashicorp/setup-terraform@v2
