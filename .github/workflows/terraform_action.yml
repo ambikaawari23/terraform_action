@@ -1,21 +1,13 @@
 on:
   workflow_call:
     inputs:
-#       working_dir:
-#         type: string
-#         default: .
-#         required: true
+      working_dir:
+        type: string
+        default: .
+        required: true
       action:
         type: string
         default: 'init'
-#       name:
-#         type: string
-#         # Friendly description to be shown in the UI instead of 'name'
-#         description: 'Working directory'
-#         # Default value if no value is explicitly provided
-#         default: '.'
-#         # Input has to be provided for the workflow to run
-#         required: true
   
 
 
