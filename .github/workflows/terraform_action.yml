@@ -3,8 +3,8 @@ on:
     inputs:
       working_dir:
         type: string
-        default: ambikaawari23/stg/terraform-stg
-        
+        default: .
+         
       action:
         type: string
         default: 'init'
@@ -26,10 +26,10 @@ jobs:
 
 #For Cloning the Repo
     - name: checkout
-      uses: ambikaawari23/stg/terraform-stg@main
-      with:
-        repository: ambikaawari23/stg
-        path: ./terraform-stg
+      uses: actions/checkout@v3 
+#       with:
+#         repository: ambikaawari23/stg
+#         path: ./terraform-stg
 
 #Install Terraform
     - uses: hashicorp/setup-terraform@v2
@@ -42,10 +42,10 @@ jobs:
         terraform --version
 
     - run: terraform init
-      working-directory: ${{ inputs.working_dir }}
+      working-directory: ambikaawari23/stg/terraform-stg
 
 #Terraform Sub commnads
     - run: terraform ${{ inputs.action }}
-      working-directory: ${{ inputs.working_dir }}
+      working-directory: ambikaawari23/stg/terraform-stg
 
        
