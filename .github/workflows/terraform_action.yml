@@ -8,14 +8,14 @@ on:
       action:
         type: string
         default: 'init'
-      name:
-        type: string
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Working directory'
-        # Default value if no value is explicitly provided
-        default: '.'
-        # Input has to be provided for the workflow to run
-        required: true
+#       name:
+#         type: string
+#         # Friendly description to be shown in the UI instead of 'name'
+#         description: 'Working directory'
+#         # Default value if no value is explicitly provided
+#         default: '.'
+#         # Input has to be provided for the workflow to run
+#         required: true
   
 
 
@@ -47,10 +47,10 @@ jobs:
         terraform --version
 
     - run: terraform init
-      working-directory: ${github.event.inputs.name}}
-      #working-directory: ${{ inputs.working_dir }}
+#       working-directory: ${github.event.inputs.name}}
+#       #working-directory: ${{ inputs.working_dir }}
 
 #Terraform Sub commnads
     - run: terraform ${{ inputs.action }}
-      working-directory: ${{github.event.inputs.name}}
-      #working-directory: ${{ inputs.working_dir }}
+#       working-directory: ${{github.event.inputs.name}}
+#       #working-directory: ${{ inputs.working_dir }}
