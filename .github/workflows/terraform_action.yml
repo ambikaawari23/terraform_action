@@ -26,10 +26,10 @@ jobs:
 
 #For Cloning the Repo
     - name: checkout
-      uses: ambikaawari23/stg@main 
-#       with:
-#         repository: ambikaawari23/stg
-#         path: ./terraform-stg
+      uses: actions/checkout@v3
+      with:
+        repository: ambikaawari23/stg
+        path: ./stg
 
 #Install Terraform
     - uses: hashicorp/setup-terraform@v2
