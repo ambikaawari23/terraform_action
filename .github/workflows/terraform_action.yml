@@ -28,11 +28,11 @@ jobs:
     - name: checkout repository
       uses: actions/checkout@v3
       
-    - name: Checkout Terraform repository
-      uses: actions/checkout@v2
-      with:
-        repository: ambikaawari23/storage_account_terraform
-        path: storage_account_terraform
+    # - name: Checkout Terraform repository
+    #   uses: actions/checkout@v2
+    #   with:
+    #     repository: ambikaawari23/storage_account_terraform
+    #     path: storage_account_terraform
 
  
 #Install Terraform
@@ -46,10 +46,10 @@ jobs:
         terraform --version
 
     - run: terraform init
-      working-directory: ambikaawari23/storage_account_terraform/storage_account_terraform
+      working-directory: ${{inputs.working_dir}}
 
 #Terraform Sub commnads
     - run: terraform ${{ inputs.action }}
-      working-directory: ambikaawari23/storage_account_terraform/storage_account_terraform
+      working-directory: ${{inputs.working_dir}}
 
        
