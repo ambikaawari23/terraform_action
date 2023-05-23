@@ -26,7 +26,7 @@ jobs:
 
 #For Cloning the Repo
     - name: checkout
-      uses: ambikaawari23/stg/terraform-stg@v1
+      uses: ambikaawari23/stg/terraform-stg@main
       with:
         repository: ambikaawari23/stg
         path: ./terraform-stg
