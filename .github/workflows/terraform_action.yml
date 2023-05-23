@@ -3,7 +3,7 @@ on:
     inputs:
       working_dir:
         type: string
-        default: .
+        default: ambikaawari23/storage_account_terraform/terraform-stg
          
       action:
         type: string
