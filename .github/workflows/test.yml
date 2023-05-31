@@ -9,7 +9,7 @@ on:
    inputs:
       name:
         type: boolean
-        description: Who to greet
+        
         options: 
         - monalisa
         - cschleiden
