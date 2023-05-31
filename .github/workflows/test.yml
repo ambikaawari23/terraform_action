@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
    inputs:
       name:
-        type: choice
+        type: boolean
         description: Who to greet
         options: 
         - monalisa
